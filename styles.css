@@ -6,9 +6,12 @@
     "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+html, body {
+  overflow: hidden;
+}
 .container {
   width: 100vw;
-  min-height: 100dvh;
+  height: 100dvh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -21,6 +24,9 @@
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   box-shadow: 0 0 5px 0 #4d2dee55;
+  position: sticky;
+  top: 0;
+  width: 100%;
 }
 .header .header-icon {
   font-size: 2rem;
@@ -35,18 +41,18 @@
   gap: 0rem;
 }
 .header .header-title h1 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #4d2dee;
   text-shadow: 0 0 2px #0005;
 }
 .header .header-title p {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: #0008;
 }
 .header .icon {
   margin-left: auto;
-  font-size: 1.5rem;
-  background-color: #0003;
+  font-size: 2rem;
+  background-color: #0001;
   color: #121212;
   padding: 0.2rem;
   border-radius: 8px;
@@ -60,6 +66,7 @@
   overflow-y: auto;
   scrollbar-width: none;
   position: relative;
+  width: 100%;
 }
 .content-card {
   background-color: #4d2dee;
@@ -79,17 +86,17 @@
 .content-card .content-card-header .content-icon {
   margin-left: auto;
   color: #ee4d2d;
-  background-color: #0005;
+  background-color: #0003;
   padding: 0.2rem;
   border-radius: 8px;
   font-size: 2rem;
 }
 .content-card .content-card-header h2 {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #fffd;
 }
 .content-card .content-card-header h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #fff;
   text-shadow: 0 0 2px #0005;
 }
@@ -109,9 +116,9 @@
 }
 .content-card-footer-item .content-icon {
   color: #ee4d2d;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   padding: 0.5rem;
-  background-color: #0005;
+  background-color: #0003;
   border-radius: 8px;
 }
 .content-card-footer-item .content-card-footer-item-title {
@@ -119,11 +126,11 @@
   flex-direction: column;
 }
 .content-card-footer-item-title p {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: #fffd;
 }
 .content-card-footer-item-title h2 {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #fff;
   text-shadow: 0 0 2px #0005;
 }
@@ -145,12 +152,12 @@
   padding: 0 1rem;
 }
 .content-filter .content-filter-header h2 {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #121212;
   text-shadow: #0005;
 }
 .content-filter .content-filter-header p {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: #0008;
 }
 
@@ -163,7 +170,7 @@
   background-color: #fff;
   box-shadow: 0 0 5px 0 #0005;
   gap: 0.5rem;
-  padding: 0.4rem 0.8rem;
+  padding: 0.5rem 1rem;
 }
 .content-filter .content-filter-input .icon {
   font-size: 1.5rem;
@@ -171,10 +178,11 @@
 }
 .content-filter .content-filter-input #search {
   border: none;
-  font-size: 0.8rem;
+  font-size: 1rem;
   outline: none;
   color: #000;
   flex: 1;
+  background-color: #fff;
 }
 
 .content-filter .content-filter-filters {
@@ -188,10 +196,10 @@
 }
 .content-filter .content-filter-filters .filter {
   border: 1px solid #0005;
-  padding: 0.2rem 0.8rem;
+  padding: 0.5rem 1rem;
   border-radius: 16px;
   background-color: #fff;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 .content-filter .content-filter-filters .filter.filter-active {
   background-color: #4d2dee;
@@ -210,7 +218,7 @@
 .content-main .content-main-card {
   background-color: #fff;
   margin: 0 1rem;
-  padding: 0.5rem 1rem 0.5rem 1rem;
+  padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   border-radius: 8px;
@@ -277,7 +285,7 @@
   gap: 0.2rem;
 }
 .content-main-card-title h2 {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #121212;
   text-shadow: 0 0 2px #0005;
 }
@@ -287,7 +295,7 @@
   gap: 0.2rem;
 }
 .content-main-card-title .content-main-card-title-tags h2 {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: #12121288;
 }
 .content-main-card-title .content-main-card-title-tags p {
@@ -304,11 +312,11 @@
   margin-top: auto;
 }
 .content-main-card-price h2 {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: #121212;
 }
 .content-main-card-price span {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: #ee4d2d;
 }
 
@@ -352,7 +360,7 @@
   border-radius: 16px 16px 0 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.8rem;
   box-shadow: 0 0 10px 0 #0005;
 }
 #myform .drag-icon {
@@ -366,20 +374,20 @@
 #myform .input-area {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.4rem;
 }
 .input-area label {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #121212;
   text-shadow: 0 0 2px #0005;
 }
 .input-area input {
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1rem;
   border-radius: 8px;
   border: 1px solid #0005;
   box-shadow: 0 0 5px 0 #0005;
   outline: none;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .input-area-row {
   display: flex;
@@ -393,21 +401,22 @@
   gap: 0.2rem;
 }
 .input-area-row label {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #121212;
   text-shadow: 0 0 5px 0 #0005;
 }
 .input-area-row input {
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1rem;
   border-radius: 8px;
   border: 1px solid #0005;
   box-shadow: 0 0 5px 0 #0005;
   outline: none;
   font-size: 0.8rem;
   color: #121212;
+  width: 100%;
 }
 .input-area-row .dropdown {
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1rem;
   border-radius: 8px;
   border: 1px solid #0005;
   box-shadow: 0 0 5px 0 #0005;
@@ -420,6 +429,7 @@
  font-size: 0.8rem;
  flex: 1;
  outline: none;
+ background-color: #fff;
 }
 .buttons {
  display: flex;
@@ -429,10 +439,10 @@
  justify-content: flex-end;
 }
 .buttons input {
- padding: 0.5rem 1rem;
+ padding: 0.8rem 1rem;
  border-radius: 8px;
  border: none;
- font-size: 0.8rem;
+ font-size: 1rem;
  font-weight: 500;
  letter-spacing: 0.5px;
 }

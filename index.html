@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catatan Pengeluaran</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <span class="material-symbols-outlined header-icon"> wallet </span>
+        <div class="header-title">
+          <h1>Expense Tracking</h1>
+          <p>Tracking all yours transactions</p>
+        </div>
+        <span class="material-symbols-outlined icon" id="btn-export"> export_notes </span>
+      </div>
+      <div class="content">
+        <div class="content-card">
+          <div class="content-card-header">
+            <span class="material-symbols-outlined content-icon">
+              bar_chart
+            </span>
+            <h2>Expense Total :</h2>
+            <h1>Rp. 0</h1>
+          </div>
+          <div class="content-card-footer">
+            <div class="content-card-footer-item">
+              <span class="material-symbols-outlined content-icon">
+                receipt
+              </span>
+              <div class="content-card-footer-item-title">
+                <p>Transaction total</p>
+                <h2>0 Transaction</h2>
+              </div>
+            </div>
+            <div class="content-card-footer-item">
+              <span class="material-symbols-outlined content-icon">
+                calendar_month
+              </span>
+              <div class="content-card-footer-item-title">
+                <p>Date</p>
+                <h2>30/09/2026</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-filter">
+          <div class="content-filter-header">
+            <h2>Transaction History</h2>
+            <p>0 dari 0</p>
+          </div>
+          <div class="content-filter-input">
+            <span class="material-symbols-outlined icon"> search </span>
+            <input
+              type="search"
+              name="search"
+              id="search"
+              placeholder="Search"
+              autocomplete="off"
+            />
+          </div>
+          <div class="content-filter-filters">
+            <div class="filter filter-active">All</div>
+            <div class="filter">Food</div>
+            <div class="filter">Transportation</div>
+            <div class="filter">Bill</div>
+            <div class="filter">Shopping</div>
+            <div class="filter">Other</div>
+          </div>
+        </div>
+        <div class="content-main"></div>
+        <div class="content-add-btn">
+          <span class="material-symbols-outlined icon"> add_2 </span>
+        </div>
+      </div>
+      <div class="page-add hide">
+        <form id="myform">
+          <div class="drag-icon"></div>
+          <div class="input-area">
+            <label for="name">Transaction</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Example : Makan Siang"
+              required
+            />
+          </div>
+          <div class="input-area">
+            <label for="nominal">Nominal</label>
+            <input
+              type="number"
+              name="nominal"
+              id="nominal"
+              placeholder="Rp. ..."
+              required
+            />
+          </div>
+          <div class="input-area-row">
+            <span>
+              <label for="category">Category</label>
+              <div class="dropdown">
+                <select name="category" id="category">
+                  <option value="Food">Food</option>
+                  <option value="Transportation">Transportation</option>
+                  <option value="Bill">Bill</option>
+                  <option value="Shopping">Shopping</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </span>
+            <span>
+              <label for="date">Date</label>
+              <input type="date" name="date" id="date" required />
+            </span>
+          </div>
+          <div class="buttons">
+            <input type="reset" value="Reset" class="reset" />
+            <input type="submit" value="Add Transaction" class="submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

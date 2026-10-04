@@ -4,7 +4,22 @@ const formAdd = document.querySelector(".page-add #myform");
 const contentMain = document.querySelector(".content-main");
 const search = document.getElementById("search");
 const btnExport = document.getElementById("btn-export");
+const month = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 
+let monthUi = document.getElementById("month");
 let filtersBtn = document.querySelectorAll(".content-filter-filters .filter");
 let transactionTotalUi = document.querySelector(
   ".content-card-footer-item-title h2",
@@ -32,6 +47,10 @@ document.onclick = (e) => {
   }
 };
 
+function monthInitiation() {
+  let monthName = new Date();
+  monthUi.innerText = month[monthName.getMonth()];
+}
 function exportToExcel() {
   let data = JSON.parse(localStorage.getItem("datas"));
   if (data.length === 0) {
@@ -39,10 +58,10 @@ function exportToExcel() {
     return;
   }
   let dataFormatted = data.map((item, i) => ({
-    "No": i += 1,
-    "Date": item.date || "-",
+    No: (i += 1),
+    Date: item.date || "-",
     "Transaction Name": item.name || "-",
-    "Category": item.category || "-",
+    Category: item.category || "-",
     "Nominal (Rp)": Number(item.nominal) || 0,
   }));
   const worksheet = XLSX.utils.json_to_sheet(dataFormatted);
@@ -50,17 +69,17 @@ function exportToExcel() {
   XLSX.utils.book_append_sheet(workbook, worksheet, "Transaksi");
   worksheet["!cols"] = [
     { wch: 5 },
-    { wch: 25 }, 
-    { wch: 15 }, 
-    { wch: 15 }, 
-    { wch: 15 }, 
+    { wch: 25 },
+    { wch: 15 },
+    { wch: 15 },
+    { wch: 15 },
   ];
 
-  XLSX.writeFile(workbook, "Data_Transaksi.xlsx");
+  XLSX.writeFile(workbook, `Transaction_Data_${monthUi.innerText}.xlsx`);
 }
 if (btnExport) {
   btnExport.addEventListener("click", exportToExcel);
-};
+}
 function format(angka) {
   return new Intl.NumberFormat("id-ID").format(angka);
 }
@@ -82,6 +101,8 @@ function del() {
       let data = JSON.parse(localStorage.getItem("datas")) || [];
       let dataBaru = data.filter((filter) => filter.id != itemIndex);
       save(dataBaru);
+      filtersBtn.forEach((filter) => filter.classList.remove("filter-active"));
+      filtersBtn[0].classList.add("filter-active");
       render();
     }
   });
@@ -93,7 +114,6 @@ function save(newData) {
 function render() {
   countAll();
   let data = JSON.parse(localStorage.getItem("datas")) || [];
-  console.log(data);
   contentMain.innerHTML = "";
   totalNum = 0;
   index = 0;
@@ -138,6 +158,7 @@ function render() {
   });
   count(data.length);
   del();
+  monthInitiation();
 }
 render();
 
@@ -202,6 +223,7 @@ function renderFilter(dataArray) {
   });
   count(dataArray.length);
   del();
+  monthInitiation();
 }
 filtersBtn.forEach((filter) => {
   filter.onclick = () => {

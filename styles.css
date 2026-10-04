@@ -199,7 +199,7 @@ html, body {
   padding: 0.5rem 1rem;
   border-radius: 16px;
   background-color: #fff;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .content-filter .content-filter-filters .filter.filter-active {
   background-color: #4d2dee;
@@ -300,7 +300,7 @@ html, body {
 }
 .content-main-card-title .content-main-card-title-tags p {
   background-color: #4d2dee33;
-  padding: 0 0.4rem;
+  padding: 0.2rem 0.4rem;
   border-radius: 8px;
   font-size: 0.7rem;
   text-shadow: 0 0 2px #0005;
@@ -327,7 +327,7 @@ html, body {
   position: sticky;
   bottom: 1rem;
   right: 1rem;
-  padding: 0.8rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -336,6 +336,7 @@ html, body {
 }
 .content-add-btn .icon {
   color: #fff;
+  font-size: 2rem;
 }
 .page-add {
   position: absolute;
@@ -411,9 +412,10 @@ html, body {
   border: 1px solid #0005;
   box-shadow: 0 0 5px 0 #0005;
   outline: none;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #121212;
   width: 100%;
+  background-color: #fff;
 }
 .input-area-row .dropdown {
   padding: 0.8rem 1rem;
@@ -426,7 +428,7 @@ html, body {
 }
 .dropdown #category {
  border: none;
- font-size: 0.8rem;
+ font-size: 1rem;
  flex: 1;
  outline: none;
  background-color: #fff;

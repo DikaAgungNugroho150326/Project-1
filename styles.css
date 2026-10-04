@@ -407,12 +407,14 @@ body {
   color: #121212;
   text-shadow: 0 0 5px 0 #0005;
 }
-.input-area-row input {
+.input-area-row #date {
   border: none;
   font-size: 1rem;
   flex: 1;
   outline: none;
   background-color: #fff;
+  padding: 0;
+  box-shadow: none;
 }
 .input-area-row .dropdown {
   padding: 0.8rem 1rem;

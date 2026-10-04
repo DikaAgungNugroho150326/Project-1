@@ -6,7 +6,8 @@
     "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-html, body {
+html,
+body {
   overflow: hidden;
 }
 .container {
@@ -152,12 +153,12 @@ html, body {
   padding: 0 1rem;
 }
 .content-filter .content-filter-header h2 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #121212;
   text-shadow: #0005;
 }
 .content-filter .content-filter-header p {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #0008;
 }
 
@@ -352,7 +353,7 @@ html, body {
   z-index: 110;
 }
 .page-add.hide {
- transform: translateY(100%);
+  transform: translateY(100%);
 }
 .page-add #myform {
   background-color: #fff;
@@ -399,7 +400,7 @@ html, body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.5rem;
 }
 .input-area-row label {
   font-size: 1rem;
@@ -407,14 +408,10 @@ html, body {
   text-shadow: 0 0 5px 0 #0005;
 }
 .input-area-row input {
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
-  border: 1px solid #0005;
-  box-shadow: 0 0 5px 0 #0005;
-  outline: none;
+  border: none;
   font-size: 1rem;
-  color: #121212;
-  width: 100%;
+  flex: 1;
+  outline: none;
   background-color: #fff;
 }
 .input-area-row .dropdown {
@@ -427,37 +424,36 @@ html, body {
   align-items: center;
 }
 .dropdown #category {
- border: none;
- font-size: 1rem;
- flex: 1;
- outline: none;
- background-color: #fff;
+  border: none;
+  font-size: 1rem;
+  flex: 1;
+  outline: none;
+  background-color: #fff;
 }
 .buttons {
- display: flex;
- align-items: center;
- gap: 0.5rem;
- margin-top: 1rem;
- justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  justify-content: flex-end;
 }
 .buttons input {
- padding: 0.8rem 1rem;
- border-radius: 8px;
- border: none;
- font-size: 1rem;
- font-weight: 500;
- letter-spacing: 0.5px;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 .buttons .submit {
- background-color: #4d2dee;
- color: #fff;
- box-shadow: 0 0 5px 0 #0005;
- border: 1px solid #4d2dee;
+  background-color: #4d2dee;
+  color: #fff;
+  box-shadow: 0 0 5px 0 #0005;
+  border: 1px solid #4d2dee;
 }
 .buttons .reset {
- background-color: #4d2dee33;
- border: 1px solid #4d2dee;
- box-shadow: 0 0 5px 0 #0005;
- color: #4d2dee;
+  background-color: #4d2dee33;
+  border: 1px solid #4d2dee;
+  box-shadow: 0 0 5px 0 #0005;
+  color: #4d2dee;
 }
-

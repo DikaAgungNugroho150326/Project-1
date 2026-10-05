@@ -81,7 +81,10 @@ if (btnExport) {
   btnExport.addEventListener("click", exportToExcel);
 }
 function format(angka) {
-  return new Intl.NumberFormat("id-ID").format(angka);
+  if (!angka) return "";
+  const cleanNumber = angka.toString().replace(/\D/g, "");
+  if (!cleanNumber) return "";
+  return new Intl.NumberFormat("id-ID").format(Number(cleanNumber));
 }
 function count(num) {
   let totalNum = num == undefined ? (num = 0) : (num = num);
@@ -141,7 +144,7 @@ function render() {
     newEl.classList.add("content-main-card");
     newEl.innerHTML = `
       <h2 class="index">${index}.</h2>
-      <span class="material-symbols-outlined ${badge}"> ${icon} </span>
+      <span class="material-symbols-outlined ${badge} notranslate"> ${icon} </span>
       <div class="content-main-card-title">
         <h2>${el.name}</h2>
         <div class="content-main-card-title-tags">
@@ -151,7 +154,7 @@ function render() {
       </div>
       <div class="content-main-card-price">
         <h2>Rp. ${format(el.nominal)}</h2>
-        <span class="material-symbols-outlined icon" data-index="${el.id}"> delete </span>
+        <span class="material-symbols-outlined icon notranslate" data-index="${el.id}"> delete </span>
       </div>
     `;
     contentMain.appendChild(newEl);
@@ -206,7 +209,7 @@ function renderFilter(dataArray) {
     newEl.classList.add("content-main-card");
     newEl.innerHTML = `
       <h2 class="index">${index}.</h2>
-      <span class="material-symbols-outlined ${badge}"> ${icon} </span>
+      <span class="material-symbols-outlined ${badge} notranslate"> ${icon} </span>
       <div class="content-main-card-title">
         <h2>${el.name}</h2>
         <div class="content-main-card-title-tags">
@@ -216,7 +219,7 @@ function renderFilter(dataArray) {
       </div>
       <div class="content-main-card-price">
         <h2>Rp. ${format(el.nominal)}</h2>
-        <span class="material-symbols-outlined icon" data-index="${el.id}"> delete </span>
+        <span class="material-symbols-outlined icon notranslate" data-index="${el.id}"> delete </span>
       </div>
     `;
     contentMain.appendChild(newEl);

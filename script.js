@@ -128,10 +128,10 @@ function render() {
     if (el.category == "Food") {
       badge = "icon-makan";
       icon = "flatware";
-    } else if (el.category == "Transportation") {
+    } else if (el.category == "Transport") {
       badge = "icon-trans";
       icon = "transportation";
-    } else if (el.category == "Bill") {
+    } else if (el.category == "Bills") {
       badge = "icon-bill";
       icon = "payments";
     } else if (el.category == "Shopping") {
@@ -193,10 +193,10 @@ function renderFilter(dataArray) {
     if (el.category == "Food") {
       badge = "icon-makan";
       icon = "flatware";
-    } else if (el.category == "Transportation") {
+    } else if (el.category == "Transport") {
       badge = "icon-trans";
       icon = "transportation";
-    } else if (el.category == "Bill") {
+    } else if (el.category == "Bills") {
       badge = "icon-bill";
       icon = "payments";
     } else if (el.category == "Shopping") {

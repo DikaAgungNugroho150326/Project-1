@@ -49,7 +49,7 @@ document.onclick = (e) => {
 
 function monthInitiation() {
   let monthName = new Date();
-  let textMonthUi = `${monthName.toLocaleDateString('en', {weekday: "long"})}, ${monthName.getDate()} ${month[monthName.getMonth()]} ${monthName.getFullYear()}`;
+  let textMonthUi = `${monthName.getDate()} ${month[monthName.getMonth()]} ${monthName.getFullYear()}`;
   monthUi.innerText = textMonthUi;
 }
 function exportToExcel() {

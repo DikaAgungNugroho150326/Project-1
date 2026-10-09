@@ -228,17 +228,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-.content-main .content-main-card .index {
-  font-size: 0.6rem;
-  color: #121212aa;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: #4d2dee55;
-  color: #000;
-  padding: 0.2rem 0.4rem;
-  border-radius: 0 0 0 8px;
-}
 .content-main-card .icon-makan {
   font-size: 1.5rem;
   color: #ee4d2d;

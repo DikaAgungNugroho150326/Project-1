@@ -49,7 +49,8 @@ document.onclick = (e) => {
 
 function monthInitiation() {
   let monthName = new Date();
-  monthUi.innerText = month[monthName.getMonth()];
+  let textMonthUi = `${monthName.toLocaleDateString('en', {weekday: "long"})}, ${monthName.getDate()} ${month[monthName.getMonth()]} ${monthName.getFullYear()}`;
+  monthUi.innerText = textMonthUi;
 }
 function exportToExcel() {
   let data = JSON.parse(localStorage.getItem("datas"));
@@ -75,7 +76,7 @@ function exportToExcel() {
     { wch: 15 },
   ];
 
-  XLSX.writeFile(workbook, `Transaction_Data_${monthUi.innerText}.xlsx`);
+  XLSX.writeFile(workbook, `Transaction_Data_On_${monthUi.innerText}.xlsx`);
 }
 if (btnExport) {
   btnExport.addEventListener("click", exportToExcel);
@@ -89,13 +90,13 @@ function format(angka) {
 function count(num) {
   let totalNum = num == undefined ? (num = 0) : (num = num);
   let transactionTotal = JSON.parse(localStorage.getItem("datas"))?.length || 0;
-  countService.innerText = `${totalNum} dari ${transactionTotal}`;
-  transactionTotalUi.innerText = `${transactionTotal} Transaction`;
+  countService.innerText = `${totalNum} of ${transactionTotal}`;
+  transactionTotalUi.innerText = `${transactionTotal} Transactions`;
 }
 function countAll() {
   let data = JSON.parse(localStorage.getItem("datas")) || [];
   const total = data.reduce((acc, item) => acc + Number(item.nominal || 0), 0);
-  totalExpense.innerText = `Rp. ${format(total)}`;
+  totalExpense.innerText = `IDR ${format(total)}`;
 }
 function del() {
   contentMain.addEventListener("click", (e) => {
@@ -119,7 +120,6 @@ function render() {
   let data = JSON.parse(localStorage.getItem("datas")) || [];
   contentMain.innerHTML = "";
   totalNum = 0;
-  index = 0;
   data.forEach((el, i) => {
     let newEl = document.createElement("div");
     let badge = null;
@@ -141,19 +141,20 @@ function render() {
       badge = "icon-other";
       icon = "list_alt";
     }
+    let dateObj = new Date(el.date + "T00:00:00");
+    let date = dateObj.toLocaleDateString("en-GB", {day:"2-digit", month:"short", year:"numeric"});
     newEl.classList.add("content-main-card");
     newEl.innerHTML = `
-      <h2 class="index">${index}.</h2>
       <span class="material-symbols-outlined ${badge} notranslate"> ${icon} </span>
       <div class="content-main-card-title">
         <h2>${el.name}</h2>
         <div class="content-main-card-title-tags">
-          <h2>${el.date} |</h2>
+          <h2>${date} |</h2>
           <p>${el.category}</p>
         </div>
       </div>
       <div class="content-main-card-price">
-        <h2>Rp. ${format(el.nominal)}</h2>
+        <h2>IDR ${format(el.nominal)}</h2>
         <span class="material-symbols-outlined icon notranslate" data-index="${el.id}"> delete </span>
       </div>
     `;
@@ -184,12 +185,10 @@ formAdd.addEventListener("submit", (e) => {
 function renderFilter(dataArray) {
   contentMain.innerHTML = "";
   totalNum = 0;
-  index = 0;
   dataArray.forEach((el) => {
     let newEl = document.createElement("div");
     let badge = null;
     let icon = null;
-    index += 1;
     if (el.category == "Food") {
       badge = "icon-makan";
       icon = "flatware";
@@ -206,19 +205,20 @@ function renderFilter(dataArray) {
       badge = "icon-other";
       icon = "list_alt";
     }
+    let dateObj = new Date(el.date + "T00:00:00");
+    let date = dateObj.toLocaleDateString("en-GB", {day:"2-digit", month:"short", year:"numeric"});
     newEl.classList.add("content-main-card");
     newEl.innerHTML = `
-      <h2 class="index">${index}.</h2>
       <span class="material-symbols-outlined ${badge} notranslate"> ${icon} </span>
       <div class="content-main-card-title">
         <h2>${el.name}</h2>
         <div class="content-main-card-title-tags">
-          <h2>${el.date} |</h2>
+          <h2>${date} |</h2>
           <p>${el.category}</p>
         </div>
       </div>
       <div class="content-main-card-price">
-        <h2>Rp. ${format(el.nominal)}</h2>
+        <h2>IDR ${format(el.nominal)}</h2>
         <span class="material-symbols-outlined icon notranslate" data-index="${el.id}"> delete </span>
       </div>
     `;
